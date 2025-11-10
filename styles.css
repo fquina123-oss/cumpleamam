@@ -1,0 +1,647 @@
+/* Variables CSS */
+:root {
+    --primary-color: #ff6b9d;
+    --secondary-color: #c44569;
+    --accent-color: #f8b500;
+    --text-color: #2c3e50;
+    --light-bg: #fff5f8;
+    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-4: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+    background: var(--light-bg);
+}
+
+/* Canvas para confetti */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); }
+}
+
+/* Birthday Card */
+.birthday-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.birthday-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.1) 0%, transparent 70%);
+    animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Balloons and Cake Icon */
+.balloons {
+    margin-bottom: 30px;
+}
+
+.cake-icon {
+    font-size: 80px;
+    color: var(--primary-color);
+    animation: bounce 2s infinite;
+    text-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+}
+
+/* Titles */
+.main-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
+    font-weight: 700;
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.name-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-shadow: 0 3px 15px rgba(196, 69, 105, 0.3);
+}
+
+/* Birthday Message */
+.birthday-message {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+/* Celebration Icons */
+.celebration-icons {
+    margin: 30px 0;
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.celebration-icons i {
+    margin: 0 10px;
+    animation: spin 3s infinite;
+    display: inline-block;
+}
+
+.celebration-icons i:nth-child(1) { animation-delay: 0s; }
+.celebration-icons i:nth-child(2) { animation-delay: 0.5s; }
+.celebration-icons i:nth-child(3) { animation-delay: 1s; }
+.celebration-icons i:nth-child(4) { animation-delay: 1.5s; }
+.celebration-icons i:nth-child(5) { animation-delay: 2s; }
+
+@keyframes spin {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(10deg) scale(1.2); }
+    50% { transform: rotate(-10deg) scale(1.1); }
+    75% { transform: rotate(5deg) scale(1.15); }
+}
+
+/* Celebrate Button */
+.btn-celebrate {
+    background: var(--gradient-2);
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-celebrate::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-celebrate:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-celebrate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+}
+
+.btn-celebrate:active {
+    transform: translateY(-2px);
+}
+
+/* Wishes Section */
+.wishes-section {
+    background: white;
+    padding: 80px 0;
+}
+
+.wish-card {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 2px solid transparent;
+}
+
+.wish-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.wish-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.wish-card h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.wish-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer-section {
+    background: var(--gradient-1);
+    color: white;
+    font-weight: 300;
+}
+
+/* Animaciones */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1.5s ease-in;
+}
+
+.animate-slide-up {
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design - Tablet y Desktop pequeño (max-width: 992px) */
+@media (max-width: 992px) {
+    .hero-section {
+        min-height: auto;
+        padding: 40px 0;
+    }
+    
+    .birthday-card {
+        padding: 50px 35px;
+        margin: 20px 10px;
+    }
+    
+    .main-title {
+        font-size: 3.5rem;
+    }
+    
+    .name-title {
+        font-size: 4rem;
+    }
+    
+    .wishes-section {
+        padding: 60px 0;
+    }
+}
+
+/* Responsive Design - Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 30px 0;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+    
+    .name-title {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    
+    .birthday-message {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+    
+    .birthday-card {
+        padding: 40px 25px;
+        margin: 20px 15px;
+        border-radius: 25px;
+    }
+    
+    .cake-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    
+    .celebration-icons {
+        margin: 20px 0;
+        font-size: 1.8rem;
+    }
+    
+    .celebration-icons i {
+        margin: 0 8px;
+    }
+    
+    .btn-celebrate {
+        padding: 12px 35px;
+        font-size: 1.1rem;
+        width: auto;
+        max-width: 100%;
+        min-width: 200px;
+    }
+    
+    .wishes-section {
+        padding: 50px 0;
+    }
+    
+    .wish-card {
+        margin-bottom: 20px;
+        padding: 35px 25px;
+    }
+    
+    .wish-icon {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .wish-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+    
+    .wish-card p {
+        font-size: 0.95rem;
+    }
+    
+    .footer-section {
+        padding: 30px 0;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive Design - Móvil grande (max-width: 576px) */
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .hero-section {
+        padding: 20px 0;
+        min-height: 100vh;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+    
+    .name-title {
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+    
+    .birthday-message {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+    
+    .birthday-card {
+        padding: 30px 20px;
+        margin: 15px 10px;
+        border-radius: 20px;
+    }
+    
+    .cake-icon {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .balloons {
+        margin-bottom: 20px;
+    }
+    
+    .celebration-icons {
+        margin: 15px 0;
+        font-size: 1.5rem;
+    }
+    
+    .celebration-icons i {
+        margin: 0 5px;
+    }
+    
+    .btn-celebrate {
+        padding: 12px 30px;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    
+    .btn-celebrate i {
+        font-size: 1rem;
+    }
+    
+    .wishes-section {
+        padding: 40px 0;
+    }
+    
+    .wish-card {
+        padding: 25px 20px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+    }
+    
+    .wish-icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .wish-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .wish-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .footer-section {
+        padding: 25px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .footer-section p {
+        margin-bottom: 5px;
+    }
+}
+
+/* Responsive Design - Móvil pequeño (max-width: 400px) */
+@media (max-width: 400px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .name-title {
+        font-size: 2.5rem;
+    }
+    
+    .birthday-card {
+        padding: 25px 15px;
+        margin: 10px 5px;
+    }
+    
+    .birthday-message {
+        font-size: 0.9rem;
+    }
+    
+    .cake-icon {
+        font-size: 45px;
+    }
+    
+    .celebration-icons {
+        font-size: 1.3rem;
+    }
+    
+    .btn-celebrate {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+    
+    .wish-card {
+        padding: 20px 15px;
+    }
+    
+    .wish-icon {
+        font-size: 2rem;
+    }
+    
+    .wish-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .wish-card p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Responsive Design - Pantallas grandes (min-width: 1400px) */
+@media (min-width: 1400px) {
+    .birthday-card {
+        padding: 70px 50px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .main-title {
+        font-size: 5rem;
+    }
+    
+    .name-title {
+        font-size: 5.5rem;
+    }
+    
+    .birthday-message {
+        font-size: 1.3rem;
+    }
+    
+    .wish-card {
+        padding: 45px 35px;
+    }
+}
+
+/* Desactivar hover en dispositivos táctiles para mejor rendimiento */
+@media (hover: none) and (pointer: coarse) {
+    .wish-card:hover {
+        transform: none !important;
+    }
+    
+    .wish-card:active {
+        transform: scale(0.98);
+    }
+    
+    .btn-celebrate:hover {
+        transform: none !important;
+    }
+    
+    .btn-celebrate:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Mejorar el scroll en móviles */
+@media (max-width: 768px) {
+    html {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    .hero-section {
+        will-change: transform;
+    }
+}
+
+/* Ajustes para orientación landscape en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto;
+        padding: 15px 0;
+    }
+    
+    .birthday-card {
+        padding: 25px 20px;
+        margin: 10px;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .name-title {
+        font-size: 2.5rem;
+    }
+    
+    .birthday-message {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .celebration-icons {
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+}
+

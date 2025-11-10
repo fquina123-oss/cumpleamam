@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Álbum de Recuerdos - Feliz Cumpleaños Mamá 💕</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="album.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="album-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a href="index.html" class="btn-back">
+                        <i class="fas fa-arrow-left me-2"></i>Volver
+                    </a>
+                    <h1 class="album-title">
+                        <i class="fas fa-heart text-danger"></i>
+                        Álbum de Recuerdos
+                        <i class="fas fa-heart text-danger"></i>
+                    </h1>
+                    <p class="album-subtitle">Momentos especiales para la mejor mamá del mundo</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Album Gallery -->
+    <section class="album-section py-5">
+        <div class="container">
+            <!-- Sección 1: Momentos Especiales -->
+            <div class="album-category mb-5">
+                <h2 class="category-title">
+                    <i class="fas fa-star me-2"></i>
+                    Momentos Especiales
+                </h2>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="1" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0001.jpg" alt="Momento Especial 1" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Recuerdo Preciado</h4>
+                                <p>Un momento inolvidable que atesoramos en el corazón</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="2" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0002.jpg" alt="Momento Especial 2" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Celebración Juntos</h4>
+                                <p>Riendo y disfrutando cada segundo a tu lado</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="3" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0003.jpg" alt="Momento Especial 3" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Sonrisas Compartidas</h4>
+                                <p>Tu felicidad ilumina nuestros días</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="4" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0004.jpg" alt="Momento Especial 4" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Día Inolvidable</h4>
+                                <p>Memorias que guardamos para siempre</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="5" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0005.jpg" alt="Momento Especial 5" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Risa y Alegría</h4>
+                                <p>Momentos llenos de amor y felicidad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="6" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0006.jpg" alt="Momento Especial 6" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Tiempo Preciado</h4>
+                                <p>Cada instante contigo es un regalo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección 2: Nuestras Aventuras -->
+            <div class="album-category mb-5">
+                <h2 class="category-title">
+                    <i class="fas fa-map-marked-alt me-2"></i>
+                    Nuestras Aventuras
+                </h2>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="7" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0007.jpg" alt="Aventura 1" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Viaje Inolvidable</h4>
+                                <p>Explorando el mundo juntos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="8" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0008.jpg" alt="Aventura 2" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Momentos Únicos</h4>
+                                <p>Creando recuerdos que duran toda la vida</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="9" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0009.jpg" alt="Aventura 3" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Diversión y Emoción</h4>
+                                <p>Disfrutando cada nueva experiencia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="10" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0010.jpg" alt="Aventura 4" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Aventuras Compartidas</h4>
+                                <p>Juntos descubrimos lugares increíbles</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="11" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0011.jpg" alt="Aventura 5" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Experiencias Nuevas</h4>
+                                <p>Construyendo historias juntos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="12" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0012.jpg" alt="Aventura 6" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Recuerdos Viajeros</h4>
+                                <p>Lugares especiales, momentos inolvidables</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección 3: Amor y Cariño -->
+            <div class="album-category mb-5">
+                <h2 class="category-title">
+                    <i class="fas fa-heart me-2"></i>
+                    Tus Nietos Y Panda
+                </h2>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="13" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0013.jpg" alt="Amor 1" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Almendras</h4>
+                                <p>El amor más grande del mundo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="14" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0014.jpg" alt="Amor 2" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Panchito</h4>
+                                <p>Tu sonrisa es nuestra alegría</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="15" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0015.jpg" alt="Amor 3" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Choco</h4>
+                                <p>Juntos somos más fuertes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="16" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG-20251109-WA0016.jpg" alt="Amor 4" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Siempre Te Observa</h4>
+                                <p>El amor que nos une para siempre</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="17" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="Imagen de WhatsApp 2025-11-09 a las 10.43.15_1fd939ad.jpg" alt="Amor 5" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Panda</h4>
+                                <p>Expresando nuestro amor sin palabras</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="18" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="Imagen de WhatsApp 2025-11-09 a las 10.43.15_d406f541.jpg" alt="Amor 6" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Ody</h4>
+                                <p>Juntos en cada paso del camino</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección 4: Recuerdos Preciados -->
+            <div class="album-category mb-5">
+                <h2 class="category-title">
+                    <i class="fas fa-camera me-2"></i>
+                    Recuerdos Preciados
+                </h2>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="19" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="Imagen de WhatsApp 2025-11-09 a las 10.43.16_f1933d89.jpg" alt="Recuerdo Preciado" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Tesoro de Memoria</h4>
+                                <p>Un recuerdo que atesoramos para siempre</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="20" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG_20200101_154836.jpg" alt="Recuerdo 2020" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Memoria del 2020</h4>
+                                <p>Un momento especial que recordamos con cariño</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="21" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG_20210223_175222.jpg" alt="Recuerdo Febrero 2021" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Febrero 2021</h4>
+                                <p>Días llenos de amor y momentos compartidos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="22" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG_20210223_182806.jpg" alt="Recuerdo Febrero 2021-2" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Momentos Especiales</h4>
+                                <p>Guardando cada sonrisa en nuestro corazón</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="23" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG_20231006_204617.jpg" alt="Recuerdo Octubre 2023" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Octubre 2023</h4>
+                                <p>Recuerdos que nos hacen sonreír cada día</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="photo-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="24" data-type="image">
+                            <div class="photo-wrapper">
+                                <img src="IMG_20250325_225910.jpg" alt="Recuerdo Marzo 2025" class="photo-img">
+                                <div class="photo-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <p>Ver más grande</p>
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Marzo 2025</h4>
+                                <p>Un recuerdo reciente lleno de alegría</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección 5: Videos Especiales -->
+            <div class="album-category mb-5">
+                <h2 class="category-title">
+                    <i class="fas fa-video me-2"></i>
+                    Videos Especiales
+                </h2>
+                <div class="row g-4">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="photo-card video-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="25" data-type="video" data-video-src="VID_20190210_111210.mp4">
+                            <div class="photo-wrapper">
+                                <video class="photo-img" preload="metadata" muted playsinline>
+                                    <source src="VID_20190210_111210.mp4" type="video/mp4">
+                                </video>
+                                <div class="photo-overlay">
+                                    <i class="fas fa-play-circle"></i>
+                                    <p>Reproducir video</p>
+                                </div>
+                                <div class="video-badge">
+                                    <i class="fas fa-video"></i> Video
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Video Especial 2019</h4>
+                                <p>Un momento capturado en video para recordar siempre</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="photo-card video-card" data-bs-toggle="modal" data-bs-target="#photoModal" data-photo="26" data-type="video" data-video-src="VID-20220508-WA0004.mp4">
+                            <div class="photo-wrapper">
+                                <video class="photo-img" preload="metadata" muted playsinline>
+                                    <source src="VID-20220508-WA0004.mp4" type="video/mp4">
+                                </video>
+                                <div class="photo-overlay">
+                                    <i class="fas fa-play-circle"></i>
+                                    <p>Reproducir video</p>
+                                </div>
+                                <div class="video-badge">
+                                    <i class="fas fa-video"></i> Video
+                                </div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Video Mayo 2022</h4>
+                                <p>Recuerdos en movimiento que nos traen felicidad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje Final -->
+            <div class="album-message text-center py-5">
+                <div class="message-card">
+                    <i class="fas fa-heart message-icon"></i>
+                    <h3>Gracias por ser nuestra mamá</h3>
+                    <p>Este álbum es solo una pequeña muestra de todos los momentos maravillosos que hemos compartido juntos. Cada foto guarda un recuerdo especial, una sonrisa, un abrazo, un momento de felicidad.</p>
+                    <p>Eres la mejor mamá del mundo y te queremos infinitamente. ¡Feliz cumpleaños! 🎉💕</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para ver fotos y videos grandes -->
+    <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photoModalLabel">Recuerdo Especial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalPhoto" src="" alt="Foto" class="modal-media" style="display: none;">
+                    <video id="modalVideo" class="modal-media" controls style="display: none;">
+                        <source src="" type="video/mp4">
+                        Tu navegador no soporta la reproducción de videos.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section text-center py-4">
+        <p class="mb-0">Hecho con <i class="fas fa-heart text-danger"></i> para la mejor mamá del mundo</p>
+       
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="album.js"></script>
+</body>
+</html>
+

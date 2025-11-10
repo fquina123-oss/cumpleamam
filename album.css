@@ -1,0 +1,994 @@
+/* Estilos para el Álbum */
+
+/* Header del Álbum */
+.album-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    padding: 60px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.album-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+    animation: float 20s infinite linear;
+}
+
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    z-index: 10;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    transform: translateX(-5px);
+}
+
+.album-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.album-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+}
+
+/* Sección del Álbum */
+.album-section {
+    background: linear-gradient(to bottom, #fff5f8 0%, #ffffff 100%);
+    min-height: 100vh;
+}
+
+.album-category {
+    margin-bottom: 60px;
+}
+
+.category-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    border-radius: 2px;
+}
+
+/* Tarjetas de Fotos */
+.photo-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.photo-card:nth-child(1) { animation-delay: 0.1s; }
+.photo-card:nth-child(2) { animation-delay: 0.2s; }
+.photo-card:nth-child(3) { animation-delay: 0.3s; }
+.photo-card:nth-child(4) { animation-delay: 0.4s; }
+.photo-card:nth-child(5) { animation-delay: 0.5s; }
+.photo-card:nth-child(6) { animation-delay: 0.6s; }
+
+.photo-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.photo-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.photo-card:hover .photo-img {
+    transform: scale(1.1);
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(245, 87, 108, 0.8));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.photo-overlay i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.photo-overlay p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.photo-card:hover .photo-overlay {
+    opacity: 1;
+}
+
+.photo-card:hover .photo-overlay i {
+    transform: scale(1);
+}
+
+.photo-card:hover .photo-overlay p {
+    transform: translateY(0);
+}
+
+.photo-caption {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.photo-caption h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.photo-caption p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Mensaje Final */
+.album-message {
+    margin-top: 80px;
+}
+
+.message-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 245, 248, 0.9));
+    border-radius: 30px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.message-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.1) 0%, transparent 70%);
+    animation: rotate 20s infinite linear;
+}
+
+.message-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.message-card h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.message-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.message-card p:last-child {
+    margin-bottom: 0;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+/* Modal */
+.modal-content {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 95vw;
+}
+
+.modal-dialog {
+    max-width: 90vw;
+    margin: 1.75rem auto;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.btn-close {
+    filter: invert(1);
+    opacity: 0.9;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 20px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+    overflow: auto;
+    text-align: center;
+}
+
+.modal-body img,
+.modal-body video {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design - Tablet y Desktop pequeño (max-width: 992px) */
+@media (max-width: 992px) {
+    .album-header {
+        padding: 50px 0 35px;
+    }
+    
+    .album-title {
+        font-size: 3.5rem;
+    }
+    
+    .album-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .category-title {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .album-section {
+        padding: 40px 0;
+    }
+    
+    .album-category {
+        margin-bottom: 50px;
+    }
+    
+    .photo-caption {
+        padding: 20px;
+    }
+    
+    .photo-caption h4 {
+        font-size: 1.7rem;
+    }
+    
+    .message-card {
+        padding: 50px 35px;
+        margin: 0 15px;
+    }
+    
+    .modal-dialog {
+        max-width: 95vw;
+    }
+    
+    .modal-body img,
+    .modal-body video {
+        max-height: 80vh;
+        max-width: 100%;
+    }
+}
+
+/* Responsive Design - Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .album-header {
+        padding: 40px 0 30px;
+    }
+    
+    .album-title {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .album-subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    
+    .category-title {
+        font-size: 2rem;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+    }
+    
+    .category-title::after {
+        width: 80px;
+        height: 2px;
+    }
+    
+    .btn-back {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+        display: inline-block;
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .album-section {
+        padding: 30px 0;
+    }
+    
+    .album-category {
+        margin-bottom: 40px;
+    }
+    
+    .photo-card {
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .photo-wrapper {
+        aspect-ratio: 4/3;
+    }
+    
+    .photo-caption {
+        padding: 20px;
+    }
+    
+    .photo-caption h4 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+    
+    .photo-caption p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .photo-overlay i {
+        font-size: 2.5rem;
+    }
+    
+    .photo-overlay p {
+        font-size: 1rem;
+    }
+    
+    .video-badge {
+        top: 10px;
+        right: 10px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .video-card .photo-overlay i {
+        font-size: 3rem;
+    }
+    
+    .message-card {
+        padding: 40px 25px;
+        margin: 0 20px;
+        border-radius: 20px;
+    }
+    
+    .message-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+    
+    .message-card h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .message-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+    
+    .modal-dialog {
+        margin: 10px;
+        max-width: calc(100% - 20px);
+    }
+    
+    .modal-content {
+        max-width: 100%;
+    }
+    
+    .modal-header {
+        padding: 12px 15px;
+    }
+    
+    .modal-title {
+        font-size: 1.6rem;
+    }
+    
+    .modal-body {
+        padding: 15px;
+        min-height: 300px;
+        background: #000;
+    }
+    
+    .modal-body img,
+    .modal-body video {
+        max-height: 75vh;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+    
+    .footer-section {
+        padding: 30px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive Design - Móvil grande (max-width: 576px) */
+@media (max-width: 576px) {
+    .album-header {
+        padding: 30px 0 25px;
+    }
+    
+    .album-title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+    
+    .album-title i {
+        font-size: 1.5rem;
+        margin: 0 5px;
+    }
+    
+    .album-subtitle {
+        font-size: 0.9rem;
+        padding: 0 15px;
+        line-height: 1.4;
+    }
+    
+    .btn-back {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+        border-radius: 20px;
+    }
+    
+    .btn-back i {
+        font-size: 0.8rem;
+    }
+    
+    .category-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+    }
+    
+    .category-title i {
+        font-size: 1.5rem;
+        margin-right: 8px;
+    }
+    
+    .category-title::after {
+        width: 60px;
+        height: 2px;
+    }
+    
+    .album-section {
+        padding: 25px 0;
+    }
+    
+    .album-category {
+        margin-bottom: 35px;
+    }
+    
+    .row.g-4 {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1rem;
+    }
+    
+    .photo-card {
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .photo-wrapper {
+        aspect-ratio: 4/3;
+    }
+    
+    .photo-caption {
+        padding: 15px;
+    }
+    
+    .photo-caption h4 {
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+    }
+    
+    .photo-caption p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .photo-overlay {
+        padding: 10px;
+    }
+    
+    .photo-overlay i {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+    
+    .photo-overlay p {
+        font-size: 0.9rem;
+    }
+    
+    .video-badge {
+        top: 8px;
+        right: 8px;
+        padding: 5px 8px;
+        font-size: 0.75rem;
+        border-radius: 15px;
+    }
+    
+    .video-badge i {
+        font-size: 0.85rem;
+    }
+    
+    .video-card .photo-overlay i {
+        font-size: 2.5rem;
+    }
+    
+    .message-card {
+        padding: 30px 20px;
+        margin: 0 15px;
+        border-radius: 15px;
+    }
+    
+    .message-icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .message-card h3 {
+        font-size: 1.7rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    
+    .message-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+    
+    .album-message {
+        margin-top: 50px;
+    }
+    
+    .modal-dialog {
+        margin: 5px;
+        max-width: calc(100% - 10px);
+    }
+    
+    .modal-content {
+        max-width: 100%;
+        border-radius: 15px;
+    }
+    
+    .modal-header {
+        padding: 10px 12px;
+    }
+    
+    .modal-title {
+        font-size: 1.4rem;
+    }
+    
+    .btn-close {
+        width: 1.2rem;
+        height: 1.2rem;
+        padding: 0.25rem;
+    }
+    
+    .modal-body {
+        padding: 10px;
+        min-height: 250px;
+        background: #000;
+    }
+    
+    .modal-body img,
+    .modal-body video {
+        max-height: 75vh;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+    
+    .modal-media {
+        max-height: 75vh;
+        max-width: 100%;
+    }
+    
+    .footer-section {
+        padding: 20px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .footer-section p {
+        margin-bottom: 5px;
+        line-height: 1.4;
+    }
+}
+
+/* Responsive Design - Móvil pequeño (max-width: 400px) */
+@media (max-width: 400px) {
+    .album-title {
+        font-size: 1.7rem;
+    }
+    
+    .album-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+    }
+    
+    .photo-caption {
+        padding: 12px;
+    }
+    
+    .photo-caption h4 {
+        font-size: 1.2rem;
+    }
+    
+    .photo-caption p {
+        font-size: 0.8rem;
+    }
+    
+    .photo-overlay i {
+        font-size: 1.8rem;
+    }
+    
+    .photo-overlay p {
+        font-size: 0.85rem;
+    }
+    
+    .video-badge {
+        padding: 4px 6px;
+        font-size: 0.7rem;
+    }
+    
+    .message-card {
+        padding: 25px 15px;
+        margin: 0 10px;
+    }
+    
+    .message-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .message-card p {
+        font-size: 0.85rem;
+    }
+    
+    .modal-body {
+        padding: 8px;
+        min-height: 200px;
+    }
+    
+    .modal-body img,
+    .modal-body video {
+        max-height: 70vh;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    .modal-header {
+        padding: 8px 10px;
+    }
+    
+    .modal-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive Design - Pantallas muy grandes (min-width: 1400px) */
+@media (min-width: 1400px) {
+    .album-header {
+        padding: 80px 0 50px;
+    }
+    
+    .album-title {
+        font-size: 4.5rem;
+    }
+    
+    .album-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .category-title {
+        font-size: 3.5rem;
+    }
+    
+    .photo-caption {
+        padding: 30px;
+    }
+    
+    .photo-caption h4 {
+        font-size: 2rem;
+    }
+    
+    .photo-caption p {
+        font-size: 1.05rem;
+    }
+    
+    .message-card {
+        padding: 70px 50px;
+        max-width: 900px;
+    }
+    
+    .message-card h3 {
+        font-size: 3rem;
+    }
+    
+    .message-card p {
+        font-size: 1.2rem;
+    }
+    
+    .modal-dialog {
+        max-width: 1200px;
+    }
+    
+    .modal-body img,
+    .modal-body video {
+        max-height: 90vh;
+        max-width: 100%;
+    }
+}
+
+/* Estilos para Videos */
+.video-card .photo-wrapper {
+    position: relative;
+}
+
+.video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.video-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+}
+
+.video-badge i {
+    font-size: 1rem;
+}
+
+.video-card .photo-overlay i {
+    font-size: 4rem;
+}
+
+.video-card:hover .photo-overlay {
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(245, 87, 108, 0.9));
+}
+
+.modal-media {
+    max-width: 100%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Mejoras adicionales de responsividad */
+@media (max-width: 768px) {
+    .photo-card:hover {
+        transform: translateY(-8px) scale(1.01);
+    }
+}
+
+/* Desactivar hover en dispositivos táctiles para mejor rendimiento */
+@media (hover: none) and (pointer: coarse) {
+    .photo-card:hover {
+        transform: none !important;
+    }
+    
+    .photo-card:active {
+        transform: scale(0.98);
+    }
+    
+    .wish-card:hover {
+        transform: none !important;
+    }
+    
+    .wish-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Ajustes para orientación landscape en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+    .album-header {
+        padding: 20px 0 15px;
+    }
+    
+    .album-title {
+        font-size: 2rem;
+    }
+    
+    .album-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .modal-body {
+        padding: 10px;
+        min-height: 60vh;
+        background: #000;
+    }
+    
+    .modal-body img,
+    .modal-body video {
+        max-height: 80vh;
+        max-width: 95vw;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    .modal-dialog {
+        max-width: 95vw;
+        margin: 5px auto;
+    }
+}
+
+/* Asegurar que las imágenes y videos se adapten correctamente */
+.photo-img,
+.video-card video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mejorar el scroll en móviles */
+@media (max-width: 768px) {
+    html {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+}
+
